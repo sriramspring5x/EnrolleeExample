@@ -1,9 +1,7 @@
 package com.enrollmentservice.AddEnrollee;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import java.net.URI;
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -20,7 +18,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @RestController
 public class EnrolleeController {
 	
-	private static final int Null = 0;
 
 	@Autowired
 	  private Environment environment;
@@ -38,6 +35,15 @@ public class EnrolleeController {
 	    enrolleevalue.setPort(
 	        Integer.parseInt(environment.getProperty("local.server.port")));
 	    
+	    return enrolleevalue;
+	  }
+	  
+	  @GetMapping("/Enrollee")
+	  public List<Enrollee> retrieveEnrollee(){
+	    
+	    List<Enrollee> enrolleevalue = 
+	        repository.findAll();
+	 
 	    return enrolleevalue;
 	  }
 	  

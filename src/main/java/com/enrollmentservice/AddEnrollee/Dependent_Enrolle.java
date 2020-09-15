@@ -4,9 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,8 +22,7 @@ public class Dependent_Enrolle {
 	@Column
 	private String birthdate;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY)
     private Enrollee enrollee;
 	
 	public Dependent_Enrolle() {

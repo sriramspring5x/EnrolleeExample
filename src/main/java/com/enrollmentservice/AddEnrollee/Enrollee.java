@@ -1,12 +1,12 @@
 package com.enrollmentservice.AddEnrollee;
 
-import javax.persistence.CascadeType;
+import java.util.List;
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -27,12 +27,12 @@ public class Enrollee {
 	private boolean activation_status;
 
 	@Column
-	private String Dateofbirth;
+	private String dateofbirth;
 
 	private int port;
 
-	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY, mappedBy ="enrollee")
-	private Dependent_Enrolle dependent;
+	@OneToMany(mappedBy ="enrollee")
+	private List<Dependent_Enrolle> dependent;
 
 	public Enrollee() {
 	}
@@ -42,9 +42,9 @@ public class Enrollee {
 		this.id = id;
 		this.name = name;
 		this.activation_status = activation_status;
-		Dateofbirth = dateofbirth;
+		this.dateofbirth = dateofbirth;
 		this.port = port;
-		// this.dependent = dependent;
+	
 	}
 
 	public long getId() {
@@ -72,11 +72,11 @@ public class Enrollee {
 	}
 
 	public String getDateofbirth() {
-		return Dateofbirth;
+		return dateofbirth;
 	}
 
 	public void setDateofbirth(String dateofbirth) {
-		Dateofbirth = dateofbirth;
+		this.dateofbirth = dateofbirth;
 	}
 
 	public int getPort() {
@@ -87,13 +87,14 @@ public class Enrollee {
 		this.port = port;
 	}
 
-	 public Dependent_Enrolle getDependent() {
-	 return dependent;
-	 }
-	
-	
-	 public void setDependent(Dependent_Enrolle dependent) {
-	 this.dependent = dependent;
-	 }
+	public List<Dependent_Enrolle> getDependent() {
+		return dependent;
+	}
+
+	public void setDependent(List<Dependent_Enrolle> dependent) {
+		this.dependent = dependent;
+	}
+
+
 
 }
