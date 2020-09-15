@@ -9,8 +9,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "Enrollees")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Enrollee {
 
 	@Id
@@ -84,13 +87,13 @@ public class Enrollee {
 		this.port = port;
 	}
 
-	// public Dependent_Enrolle getDependent() {
-	// return dependent;
-	// }
-	//
-	//
-	// public void setDependent(Dependent_Enrolle dependent) {
-	// this.dependent = dependent;
-	// }
+	 public Dependent_Enrolle getDependent() {
+	 return dependent;
+	 }
+	
+	
+	 public void setDependent(Dependent_Enrolle dependent) {
+	 this.dependent = dependent;
+	 }
 
 }

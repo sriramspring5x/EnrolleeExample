@@ -40,6 +40,14 @@ public class Dependent_Enrolle {
 	}
 
 	
+	public Enrollee getEnrollee() {
+		return enrollee;
+	}
+
+	public void setEnrollee(Enrollee enrollee) {
+		this.enrollee = enrollee;
+	}
+
 	public String getName() {
 		return name;
 	}
