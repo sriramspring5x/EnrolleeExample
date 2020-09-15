@@ -41,7 +41,7 @@ public class EnrolleeController {
 	    return enrolleevalue;
 	  }
 	  
-	  @PostMapping(path = "/Enrollee", consumes = "application/json", produces = "application/json")
+	  @PostMapping("/Enrollee")
 	  public ResponseEntity<Object> createEnrollee (@RequestBody Enrollee enrollee){
 	    
 	    Enrollee enrolleevalue2 =  repository.save(enrollee);

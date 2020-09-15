@@ -3,13 +3,14 @@ package com.enrollmentservice.AddEnrollee;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Enrollee")
+@Table(name = "Enrollees")
 public class Enrollee {
 
 	@Id
@@ -27,9 +28,8 @@ public class Enrollee {
 
 	private int port;
 
-	// @OneToOne(cascade = CascadeType.ALL)
-	// @JoinColumn(name = "dependent_id", referencedColumnName = "id")
-	// private Dependent_Enrolle dependent;
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY, mappedBy ="enrollee")
+	private Dependent_Enrolle dependent;
 
 	public Enrollee() {
 	}
