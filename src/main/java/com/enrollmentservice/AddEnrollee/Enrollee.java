@@ -9,40 +9,39 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Enrolle")
+@Table(name = "Enrollee")
 public class Enrollee {
-	
+
 	@Id
 	@Column(name = "id")
 	private long id;
-	
+
 	@Column
 	private String name;
-	
+
 	@Column
 	private boolean activation_status;
-	
+
 	@Column
 	private String Dateofbirth;
-	
-	private int port;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "dependent_id", referencedColumnName = "id")
-    private Dependent_Enrolle dependent;
-	
-	public Enrollee() {}
-	
 
-	public Enrollee(long id, String name, boolean activation_status, String dateofbirth, int port,
-			Dependent_Enrolle dependent) {
+	private int port;
+
+	// @OneToOne(cascade = CascadeType.ALL)
+	// @JoinColumn(name = "dependent_id", referencedColumnName = "id")
+	// private Dependent_Enrolle dependent;
+
+	public Enrollee() {
+	}
+
+	public Enrollee(long id, String name, boolean activation_status, String dateofbirth, int port) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.activation_status = activation_status;
 		Dateofbirth = dateofbirth;
 		this.port = port;
-		this.dependent = dependent;
+		// this.dependent = dependent;
 	}
 
 	public long getId() {
@@ -76,24 +75,22 @@ public class Enrollee {
 	public void setDateofbirth(String dateofbirth) {
 		Dateofbirth = dateofbirth;
 	}
-	
+
 	public int getPort() {
 		return port;
 	}
 
-    public void setPort(int port) {
+	public void setPort(int port) {
 		this.port = port;
-    }
-    
-	public Dependent_Enrolle getDependent() {
-		return dependent;
 	}
 
-
-	public void setDependent(Dependent_Enrolle dependent) {
-		this.dependent = dependent;
-	}
-
-	
+	// public Dependent_Enrolle getDependent() {
+	// return dependent;
+	// }
+	//
+	//
+	// public void setDependent(Dependent_Enrolle dependent) {
+	// this.dependent = dependent;
+	// }
 
 }
