@@ -19,17 +19,18 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.enrollmentservice.AddEnrollee.Enrollee.Enrollee;
+import com.enrollmentservice.AddEnrollee.Repository.DependentRepository;
 import com.enrollmentservice.AddEnrollee.Repository.EnrolleeRepository;
 
 @RestController
-public class EnrolleeController {
+public class DependentController {
 	
 
 	@Autowired
 	  private Environment environment;
 	  
 	  @Autowired
-	  private EnrolleeRepository repository;
+	  private DependentRepository dependentrepository;
 	  
 	  @GetMapping("/Enrollee/{id}")
 	  public Enrollee retrieveEnrollee
