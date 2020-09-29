@@ -1,4 +1,4 @@
-package com.enrollmentservice.AddEnrollee;
+package com.enrollmentservice.AddEnrollee.Exception;
 
 public class EnrolleeNotFoundException extends RuntimeException {
 

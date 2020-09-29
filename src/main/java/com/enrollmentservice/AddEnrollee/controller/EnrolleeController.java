@@ -1,4 +1,4 @@
-package com.enrollmentservice.AddEnrollee;
+package com.enrollmentservice.AddEnrollee.controller;
 
 import java.net.URI;
 import java.util.List;
@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import com.enrollmentservice.AddEnrollee.Enrollee.Enrollee;
+import com.enrollmentservice.AddEnrollee.Repository.EnrolleeRepository;
 
 @RestController
 public class EnrolleeController {

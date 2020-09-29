@@ -1,7 +1,9 @@
-package com.enrollmentservice.AddEnrollee;
+package com.enrollmentservice.AddEnrollee.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.QueryByExampleExecutor;
+
+import com.enrollmentservice.AddEnrollee.Enrollee.Dependent_Enrolle;
 
 public interface DependentRepository  extends JpaRepository<Dependent_Enrolle, Long>, QueryByExampleExecutor<Dependent_Enrolle>{
 	

@@ -1,4 +1,4 @@
-package com.enrollmentservice.AddEnrollee;
+package com.enrollmentservice.AddEnrollee.Enrollee;
 
 import java.util.List;
 
