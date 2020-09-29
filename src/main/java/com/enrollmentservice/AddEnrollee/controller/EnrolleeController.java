@@ -56,7 +56,7 @@ public class EnrolleeController {
 		 	    
 	    Enrollee enrolleevalue2 =  repository.save(enrollee);
 	    
-	    URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+	    URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/Enrollee")
 	  			.buildAndExpand(enrolleevalue2.getId()).toUri();
 	    
 	    enrolleevalue2.setPort(
